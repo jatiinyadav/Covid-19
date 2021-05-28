@@ -20,31 +20,20 @@ class SignInPage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: [
-          Color.fromRGBO(145, 131, 222, 1),
-          Color.fromRGBO(160, 148, 227, 1),
+          Color.fromRGBO(145, 100, 222, 1),
+          Color.fromRGBO(160, 148, 170, 1),
         ]),
       ),
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(20.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        // crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // CustomElevatedButton(
-          //   color: Colors.black87,
-          //   onPressed: () {},
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: [
-          //       Image.asset('images/google-logo.png'),
-          //       Text('Sign in with Google'),
-          //       Opacity(
-          //         opacity: 0,
-          //         child: Image.asset('images/google-logo.png'),
-          //       ),
-          //     ],
-          //   ),
-          // ),
-          SizedBox(height: 300.0),
+          // Image.asset('images/mask-4.png'),
+          // Image.asset('images/signin-doctor-logo.png'),
+
+          AnimatedImage(),
+          SizedBox(height: 50.0),
           SocialSignInButton(
             assetsName: 'images/google-logo.png',
             text: 'Sign in with Google',
@@ -91,3 +80,52 @@ class SignInPage extends StatelessWidget {
     );
   }
 }
+
+class AnimatedImage extends StatefulWidget {
+  @override
+  _AnimatedImageState createState() => _AnimatedImageState();
+}
+
+class _AnimatedImageState extends State<AnimatedImage>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller = AnimationController(
+    vsync: this,
+    duration: const Duration(seconds: 3),
+  )..repeat(reverse: true);
+
+  late Animation<Offset> _animation = Tween(
+    begin: Offset.zero,
+    end: Offset(0, 0.08),
+  ).animate(_controller);
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SlideTransition(
+      position: _animation,
+      child: Image.asset('images/signin-doctor-final.png'),
+    );
+  }
+}
+
+// Image.asset('images/mask-logo3.png'),
+// CustomElevatedButton(
+//   color: Colors.black87,
+//   onPressed: () {},
+//   child: Row(
+//     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//     children: [
+//       Image.asset('images/google-logo.png'),
+//       Text('Sign in with Google'),
+//       Opacity(
+//         opacity: 0,
+//         child: Image.asset('images/google-logo.png'),
+//       ),
+//     ],
+//   ),
+// ),
