@@ -1,10 +1,24 @@
-// import 'package:covid19_app_flutter/app/sign_in/sign_in_button.dart';
+import 'package:covid19_app_flutter/Services/auth.dart';
 import 'package:covid19_app_flutter/app/sign_in/social_sign_in_button.dart';
-// import 'package:covid19_app_flutter/common_widgets/custom_elevated_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatelessWidget {
-  const SignInPage({Key? key}) : super(key: key);
+  const SignInPage({Key? key, required this.onSignIn, required this.auth})
+      : super(key: key);
+
+  final AuthBase? auth;
+
+  final void Function(User) onSignIn;
+
+  Future<void> _signInAnonymously() async {
+    try {
+      final userCredentials = await FirebaseAuth.instance.signInAnonymously();
+      onSignIn(userCredentials.user!);
+    } catch (e) {
+      print(toString());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,15 +49,15 @@ class SignInPage extends StatelessWidget {
           AnimatedImage(),
           SizedBox(height: 50.0),
           SocialSignInButton(
-            assetsName: 'images/google-logo.png',
+            assetsName: 'images/google-24.png',
             text: 'Sign in with Google',
-            textColor: Colors.black87,
-            color: Colors.white,
+            textColor: Colors.white,
+            color: Color.fromRGBO(219, 68, 55, 1),
             onPressed: () {},
           ),
           SizedBox(height: 10.0),
           SocialSignInButton(
-            assetsName: 'images/facebook-logo.png',
+            assetsName: 'images/facebook-24.png',
             text: 'Sign in with Facebook',
             textColor: Colors.white,
             color: Color(0xFF334D92),
@@ -51,11 +65,13 @@ class SignInPage extends StatelessWidget {
           ),
           SizedBox(height: 10.0),
           SocialSignInButton(
-            assetsName: 'images/mail-logo-2.png',
-            text: 'Sign in with email',
+            assetsName: 'images/anonymous-mask.png',
+            text: 'Sign in Anonymously',
             textColor: Colors.white,
-            color: Colors.teal.shade700,
-            onPressed: () {},
+            color: Colors.black38,
+            onPressed: _signInAnonymously,
+            // onPressed: () =>
+            //     _signInAnonymously(), // Call back onPressed and  _signInAnonymously() takes no argumentthat why we have used the above shortcut method
           ),
           SizedBox(height: 10.0),
           Text(
@@ -68,18 +84,19 @@ class SignInPage extends StatelessWidget {
           ),
           SizedBox(height: 10.0),
           SocialSignInButton(
-            assetsName: 'images/anonymous-mask-32.png',
-            text: 'Sign in Anonymously',
+            assetsName: 'images/mail-logo-2.png',
+            text: 'Sign in with Phone Number',
             textColor: Colors.white,
-            color: Colors.black38,
+            color: Colors.teal.shade700,
             onPressed: () {},
           ),
-          SizedBox(height: 10.0),
         ],
       ),
     );
   }
 }
+
+class _signInAnonymously {}
 
 class AnimatedImage extends StatefulWidget {
   @override
