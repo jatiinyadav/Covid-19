@@ -1,5 +1,8 @@
+// import 'package:covid19_app_flutter/Services/auth.dart';
+// import 'package:covid19_app_flutter/app/sign_in/landing_page.dart';
 import 'package:covid19_app_flutter/Services/auth.dart';
-import 'package:covid19_app_flutter/app/sign_in/landing_page.dart';
+import 'package:covid19_app_flutter/app/sign_in/sign_in_page.dart';
+import 'package:covid19_app_flutter/screens/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -15,11 +18,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Covid-19',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: LandingPage(
+      home: SignInPage(
         auth: Auth(),
       ),
     );

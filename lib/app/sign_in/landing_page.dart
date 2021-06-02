@@ -4,41 +4,33 @@ import 'package:covid19_app_flutter/app/sign_in/sign_in_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class LandingPage extends StatefulWidget {
+class LandingPage extends StatelessWidget {
   const LandingPage({Key? key, required this.auth}) : super(key: key);
   final AuthBase auth;
 
   @override
-  _LandingPageState createState() => _LandingPageState();
-}
-
-class _LandingPageState extends State<LandingPage> {
-  User? _user;
-
-  @override
-  void initState() {
-    super.initState();
-    _updateUser(widget.auth.currentUser);
-  }
-
-  void _updateUser(User? user) {
-    setState(() {
-      _user = user;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
-    // ignore: unnecessary_null_comparison
-    if (_user == null) {
-      return SignInPage(
-        onSignIn: _updateUser,
-        auth: widget.auth,
-      );
-    }
-    return HomePage(
-      auth: widget.auth,
-      onSignOut: () => _updateUser(null),
+    return StreamBuilder(
+      stream: auth.authStateChanges(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.active) {
+          // ignore: unused_local_variable
+          final User? user = snapshot.data as User?;
+          if (user == null) {
+            return SignInPage(
+              auth: auth,
+            );
+          }
+          return HomePage(
+            auth: auth,
+          );
+        }
+        return Scaffold(
+          body: Center(
+            child: CircularProgressIndicator(),
+          ),
+        );
+      },
     );
   }
 }

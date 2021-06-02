@@ -24,8 +24,11 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  fluttertoast: ^8.0.7
   firebase_core: ^1.2.0
   firebase_auth: ^1.2.0
+  google_sign_in: ^5.0.4
+  flutter_login_facebook: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +59,7 @@ flutter:
     - images/signin-doctor-final.png
     - images/google-24.png
     - images/facebook-24.png
+    - images/doctors_sigin_new.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

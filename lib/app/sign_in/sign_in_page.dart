@@ -1,20 +1,69 @@
+import 'dart:async';
+
 import 'package:covid19_app_flutter/Services/auth.dart';
 import 'package:covid19_app_flutter/app/sign_in/social_sign_in_button.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:covid19_app_flutter/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SignInPage extends StatelessWidget {
-  const SignInPage({Key? key, required this.onSignIn, required this.auth})
-      : super(key: key);
+  const SignInPage({Key? key, required this.auth}) : super(key: key);
 
   final AuthBase? auth;
 
-  final void Function(User) onSignIn;
-
   Future<void> _signInAnonymously() async {
     try {
-      final userCredentials = await FirebaseAuth.instance.signInAnonymously();
-      onSignIn(userCredentials.user!);
+      await auth!.signInAnonymously();
+      Fluttertoast.showToast(
+        msg: "Signed in as Guest Mode",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+      );
+    } catch (e) {
+      print(toString());
+    }
+  }
+
+  // ignore: non_constant_identifier_names
+  Future<void> LoginScreenState() async {
+    try {
+      await auth!.LoginScreenState();
+      Fluttertoast.showToast(
+        msg: "Signed in as Using Phone Number",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+      );
+    } catch (e) {
+      print(toString());
+    }
+  }
+
+  Future<void> _signInWithGoogle() async {
+    try {
+      await auth!.signInWithGoogle();
+      Fluttertoast.showToast(
+        msg: "Signed in using Google",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+      );
+    } catch (e) {
+      print(toString());
+    }
+  }
+
+  Future<void> _signInWithFacebook() async {
+    try {
+      await auth!.signInWithFacebook();
+      Fluttertoast.showToast(
+        msg: "Signed in using Facebook",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+      );
     } catch (e) {
       print(toString());
     }
@@ -53,7 +102,7 @@ class SignInPage extends StatelessWidget {
             text: 'Sign in with Google',
             textColor: Colors.white,
             color: Color.fromRGBO(219, 68, 55, 1),
-            onPressed: () {},
+            onPressed: _signInWithGoogle,
           ),
           SizedBox(height: 10.0),
           SocialSignInButton(
@@ -61,12 +110,12 @@ class SignInPage extends StatelessWidget {
             text: 'Sign in with Facebook',
             textColor: Colors.white,
             color: Color(0xFF334D92),
-            onPressed: () {},
+            onPressed: _signInWithFacebook,
           ),
           SizedBox(height: 10.0),
           SocialSignInButton(
             assetsName: 'images/anonymous-mask.png',
-            text: 'Sign in Anonymously',
+            text: 'Sign in as Guest',
             textColor: Colors.white,
             color: Colors.black38,
             onPressed: _signInAnonymously,
@@ -88,15 +137,13 @@ class SignInPage extends StatelessWidget {
             text: 'Sign in with Phone Number',
             textColor: Colors.white,
             color: Colors.teal.shade700,
-            onPressed: () {},
+            onPressed: LoginScreenState,
           ),
         ],
       ),
     );
   }
 }
-
-class _signInAnonymously {}
 
 class AnimatedImage extends StatefulWidget {
   @override
@@ -125,7 +172,7 @@ class _AnimatedImageState extends State<AnimatedImage>
   Widget build(BuildContext context) {
     return SlideTransition(
       position: _animation,
-      child: Image.asset('images/signin-doctor-final.png'),
+      child: Image.asset('images/doctors_sigin_new.png'),
     );
   }
 }
