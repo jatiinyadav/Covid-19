@@ -2,20 +2,15 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_login_facebook/flutter_login_facebook.dart';
-// ignore: import_of_legacy_library_into_null_safe
 import 'package:google_sign_in/google_sign_in.dart';
 
 abstract class AuthBase {
   User? get currentUser;
-  // ignore: unused_element
-  Future<User> signInAnonymously();
   Stream<User?> authStateChanges();
-  // ignore: unused_element
+  Future<User> signInAnonymously();
   Future<User> signInWithGoogle();
   Future<User> signInWithFacebook();
-  // ignore: non_constant_identifier_names
-  Future<User> LoginScreenState();
-  // Future<User> signInWithPhone();
+  // Future<LoginScreen> signInWithPhone();
   Future<void> signOut();
 }
 
@@ -34,13 +29,6 @@ class Auth implements AuthBase {
     final userCredentials = await _firebaseAuth.signInAnonymously();
     return userCredentials.user!;
   }
-
-  // @override
-  // // ignore: unused_element
-  // Future<User> signInWithPhone() async {
-  //   final userCred = await _firebaseAuth.signInWithPhone();
-  //   return userCred.user!;
-  // }
 
   @override
   // ignore: unused_element
@@ -107,12 +95,7 @@ class Auth implements AuthBase {
 
     final facebookLogIn = FacebookLogin();
     await facebookLogIn.logOut();
-    await _firebaseAuth.signOut();
-  }
 
-  @override
-  // ignore: non_constant_identifier_names
-  Future<User> LoginScreenState() {
-    throw UnimplementedError();
+    await _firebaseAuth.signOut();
   }
 }

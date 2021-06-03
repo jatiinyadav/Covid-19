@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key, required this.auth}) : super(key: key);
-  final AuthBase auth;
+  final AuthBase? auth;
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: auth.authStateChanges(),
+      stream: auth!.authStateChanges(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.active) {
           // ignore: unused_local_variable
@@ -20,10 +20,11 @@ class LandingPage extends StatelessWidget {
             return SignInPage(
               auth: auth,
             );
+          } else {
+            return HomePage(
+              auth: auth,
+            );
           }
-          return HomePage(
-            auth: auth,
-          );
         }
         return Scaffold(
           body: Center(

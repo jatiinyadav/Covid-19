@@ -2,8 +2,7 @@ import 'dart:async';
 
 import 'package:covid19_app_flutter/Services/auth.dart';
 import 'package:covid19_app_flutter/app/sign_in/social_sign_in_button.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:covid19_app_flutter/screens/home_screen.dart';
+import 'package:covid19_app_flutter/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -26,20 +25,19 @@ class SignInPage extends StatelessWidget {
     }
   }
 
-  // ignore: non_constant_identifier_names
-  Future<void> LoginScreenState() async {
-    try {
-      await auth!.LoginScreenState();
-      Fluttertoast.showToast(
-        msg: "Signed in as Using Phone Number",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
-      );
-    } catch (e) {
-      print(toString());
-    }
-  }
+  // Future<LoginScreen?> signInWithPhone() async {
+  //   try {
+  //     await auth!.signInWithPhone();
+  //     Fluttertoast.showToast(
+  //       msg: "Signed in as Using Phone Number",
+  //       toastLength: Toast.LENGTH_SHORT,
+  //       gravity: ToastGravity.CENTER,
+  //       timeInSecForIosWeb: 1,
+  //     );
+  //   } catch (e) {
+  //     print(toString());
+  //   }
+  // }
 
   Future<void> _signInWithGoogle() async {
     try {
@@ -75,11 +73,11 @@ class SignInPage extends StatelessWidget {
       // appBar: AppBar(
       //   title: Text('Covid-19'),
       // ),
-      body: _buildContent(),
+      body: _buildContent(context),
     );
   }
 
-  Widget _buildContent() {
+  Widget _buildContent(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: [
@@ -137,8 +135,11 @@ class SignInPage extends StatelessWidget {
             text: 'Sign in with Phone Number',
             textColor: Colors.white,
             color: Colors.teal.shade700,
-            onPressed: LoginScreenState,
-          ),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()));
+            },
+          )
         ],
       ),
     );
@@ -176,20 +177,3 @@ class _AnimatedImageState extends State<AnimatedImage>
     );
   }
 }
-
-// Image.asset('images/mask-logo3.png'),
-// CustomElevatedButton(
-//   color: Colors.black87,
-//   onPressed: () {},
-//   child: Row(
-//     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//     children: [
-//       Image.asset('images/google-logo.png'),
-//       Text('Sign in with Google'),
-//       Opacity(
-//         opacity: 0,
-//         child: Image.asset('images/google-logo.png'),
-//       ),
-//     ],
-//   ),
-// ),

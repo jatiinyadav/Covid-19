@@ -1,22 +1,33 @@
 import 'package:covid19_app_flutter/app/home_page.dart';
-// import 'package:covid19_app_flutter/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 enum MobileVerificationState {
   SHOW_MOBILE_FORM_STATE,
   SHOW_OTP_FORM_STATE,
 }
 
-class LoginScreenState extends StatefulWidget {
-  const LoginScreenState({Key? key}) : super(key: key);
-
+class LoginScreen extends StatefulWidget {
   @override
-  _LoginScreenStateState createState() => _LoginScreenStateState();
+  _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _LoginScreenStateState extends State<LoginScreenState> {
+class _LoginScreenState extends State<LoginScreen> {
+  Future<void> _signOut() async {
+    try {
+      await _auth.signOut();
+      Fluttertoast.showToast(
+        msg: "Signed out Successfully.",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+      );
+    } catch (e) {
+      print(toString());
+    }
+  }
+
   MobileVerificationState currentState =
       MobileVerificationState.SHOW_MOBILE_FORM_STATE;
 
