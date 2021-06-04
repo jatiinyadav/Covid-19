@@ -14,6 +14,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  // ignore: unused_element
   Future<void> _signOut() async {
     try {
       await _auth.signOut();

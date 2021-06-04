@@ -1,12 +1,12 @@
 import 'package:align_positioned/align_positioned.dart';
-import 'package:covid19_app_flutter/Symptoms/symptoms.dart';
-// import 'package:covid19_app_flutter/Preventions/symptoms.dart';
+import 'package:covid19_app_flutter/Preventions/preventions.dart';
+// import 'package:covid19_app_flutter/app/home_page.dart';
 import 'package:covid19_app_flutter/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class PreventionScreen extends StatelessWidget {
-  const PreventionScreen({Key? key}) : super(key: key);
+class SymptomsScreen extends StatelessWidget {
+  const SymptomsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class PreventionScreen extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return SymptomsScreen();
+                                return PreventionScreen();
                               },
                             ),
                           );
@@ -60,14 +60,14 @@ class PreventionScreen extends StatelessWidget {
                       child: Stack(
                         children: [
                           SvgPicture.asset(
-                            "assets/icons/Drcorona.svg",
+                            "assets/icons/coronadr.svg",
                             width: 230,
                             fit: BoxFit.fitWidth,
                             alignment: Alignment.topCenter,
                           ),
                           AlignPositioned(
                             child: Image.asset(
-                                "assets/images/stay-home-new-icon.png"),
+                                "assets/icons/call_hospital_icon_64.png"),
                             dx: 80,
                             dy: -120,
                           ),
@@ -75,12 +75,12 @@ class PreventionScreen extends StatelessWidget {
                             top: 40,
                             left: 170,
                             child: Text(
-                              "All you need \nis stay at home.",
+                              "Consult a Doctor, \nif needed.",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.bold,
-                                fontSize: 19.0,
+                                fontSize: 17.0,
                                 color: Colors.white,
                               ),
                             ),
@@ -122,7 +122,7 @@ class PreventionScreen extends StatelessWidget {
                   // ),
                   // SizedBox(height: 20),
                   Text(
-                    "Prevention",
+                    "Symptoms",
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w600,
@@ -132,38 +132,38 @@ class PreventionScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 40),
                   PreventCard(
-                    image: "assets/images/iconfinder_128_Mask.png",
+                    image: "assets/images/fever_128.png",
                     text:
-                        "Since the start of the Covid-19 outbreak facemasks are must to wear. ",
-                    title: "Wear Face Mask",
+                        "In case of fever get rest and stay hydrated. Stay in touch with your doctor.",
+                    title: "Fever",
                   ),
                   SizedBox(height: 10),
                   PreventCard(
-                    image: "assets/images/Wash_hands_128.png",
+                    image: "assets/images/headache_128.png",
                     text:
-                        "Washing your hands with soap helps to prevent infection with Covid-19. ",
-                    title: "Wash Hands",
+                        "Ease Pressure on your Scalp or Head. Drink water and stay hydrated. ",
+                    title: "Headache",
                   ),
                   SizedBox(height: 10),
                   PreventCard(
-                    image: "assets/images/keep_distance_128.png",
+                    image: "assets/images/cough_128.png",
                     text:
-                        "Always make sure to have 2m distance with other people and be safe.",
-                    title: "Keep Social Distancing",
+                        "Rest and take decongestants for a cold. One can drink Honey Tea also.",
+                    title: "Cough",
                   ),
                   SizedBox(height: 10),
                   PreventCard(
-                    image: "assets/images/avoid_public_crowd_128.png",
+                    image: "assets/images/aches_pain_128.png",
                     text:
-                        "Avoiding Public places will stop the virus from being spread to others. ",
-                    title: "Avoid Public Crowd",
+                        "Applying ice to the affected area to help relieve pain and reduce inflammation. ",
+                    title: "Aches & Pain",
                   ),
                   SizedBox(height: 10),
                   PreventCard(
-                    image: "assets/images/home_quarantine_stay_128.png",
+                    image: "assets/images/breath_128.png",
                     text:
-                        "People in quarantine should stay home, and monitor their health.",
-                    title: "Home Quarantine",
+                        "Proper diet can help in the treatment of symptoms of respiratory diseases too.",
+                    title: "Breathing Problem",
                   ),
                   SizedBox(height: 40),
                   Text(
