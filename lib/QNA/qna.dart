@@ -41,9 +41,27 @@ class QuesAnsScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   PreventCard(
-                    title: "What is COVID-19?",
+                    title: "How can I protect myself?",
                     text:
-                        "COVID-19 is a disease caused by a virus SARS-CoV-2. Most people with COVID-19 have mild symptoms, but some people can become severely ill. ",
+                        "Wear a Mask, Stay 6 feet away from others, Get vaccinated, Wash your hands often,Cover coughs and sneezes, Monitor your health daily.",
+                  ),
+                  SizedBox(height: 10),
+                  PreventCard(
+                    title: "Am I at risk for COVID-19 from products?",
+                    text:
+                        "The virus can survive for a short period on some surfaces, it is unlikely to be spread from domestic or international mail, products, or packaging.",
+                  ),
+                  SizedBox(height: 10),
+                  PreventCard(
+                    title: "Are people with disabilities at higher risk?",
+                    text:
+                        "Adults with disabilities are more likely to have an underlying medical condition that may put them at increased risk of severe illness from COVID-19.",
+                  ),
+                  SizedBox(height: 10),
+                  PreventCard(
+                    title: "Is at-home testing available?",
+                    text:
+                        "Yes. At-home testing and collection allow you to collect a specimen at home and either send it to a testing facility or preform the test at home.",
                   ),
                   SizedBox(height: 40),
                   Text(
