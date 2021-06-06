@@ -1,15 +1,16 @@
 // import 'package:covid19_app_flutter/models/global_summary.dart';
 import 'package:covid19_app_flutter/models/global_summary.dart';
 import 'package:flutter/material.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 class GlobalStatistics extends StatelessWidget {
   final GlobalSummaryModel summary;
 
   const GlobalStatistics({Key? key, required this.summary}) : super(key: key);
 
-  String Function(Match match) get mathFunc => mathFunc;
+  // String Function(Match match) get mathFunc => mathFunc;
 
-  Pattern get reg => reg;
+  // Pattern get reg => reg;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,38 @@ class GlobalStatistics extends StatelessWidget {
           summary.totalConfirmed,
           summary.newConfirmed,
           Colors.red,
+        ),
+        buildCard(
+          "ACTIVE",
+          summary.totalConfirmed - summary.totalRecovered - summary.totalDeaths,
+          summary.newConfirmed - summary.newRecovered - summary.newDeaths,
+          Colors.blue,
+        ),
+        buildCard(
+          "RECOVERED",
+          summary.totalRecovered,
+          summary.newRecovered,
+          Colors.green,
+        ),
+        buildCard(
+          "DEATH",
+          summary.totalDeaths,
+          summary.newDeaths,
+          Colors.grey.shade500,
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 4,
+            vertical: 6,
+          ),
+          child: Text(
+            "Statistics Updated " + timeago.format(summary.date),
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
         )
       ],
     );
@@ -29,7 +62,8 @@ class GlobalStatistics extends StatelessWidget {
     return Card(
       elevation: 1,
       child: Container(
-        height: 100,
+        color: Colors.white38,
+        height: 90,
         padding: EdgeInsets.symmetric(
           horizontal: 16,
           vertical: 8,
@@ -62,7 +96,28 @@ class GlobalStatistics extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      totalCount.toString().replaceAllMapped(reg, mathFunc),
+                      totalCount.toString(),
+                      style: TextStyle(
+                        color: color,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 28,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      "Today",
+                      style: TextStyle(
+                        color: color,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                    ),
+                    Text(
+                      todayCount.toString(),
                       style: TextStyle(
                         color: color,
                         fontWeight: FontWeight.bold,

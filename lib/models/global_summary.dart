@@ -7,8 +7,15 @@ class GlobalSummaryModel {
   final int totalRecovered;
   final DateTime date;
 
-  GlobalSummaryModel(this.newConfirmed, this.totalConfirmed, this.newDeaths,
-      this.totalDeaths, this.newRecovered, this.totalRecovered, this.date);
+  GlobalSummaryModel(
+    this.newConfirmed,
+    this.totalConfirmed,
+    this.newDeaths,
+    this.totalDeaths,
+    this.newRecovered,
+    this.totalRecovered,
+    this.date,
+  );
 
   factory GlobalSummaryModel.fromJson(Map<String, dynamic> json) {
     return GlobalSummaryModel(

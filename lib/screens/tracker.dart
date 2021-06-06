@@ -24,18 +24,13 @@ class _TrackerState extends State<Tracker> {
 
     return Scaffold(
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        // crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          // ImageRotate(),
           Expanded(
             child: Container(
-              padding: EdgeInsets.all(32),
-              decoration: BoxDecoration(
-                color: Colors.amber[100],
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(50),
-                  bottomLeft: Radius.circular(50),
-                ),
-              ),
+              color: Colors.amber[500],
+              padding: EdgeInsets.fromLTRB(32, 32, 32, 32),
               child: AnimatedSwitcher(
                 duration: Duration(milliseconds: 250),
                 child: navigationStatus == NavigationStatus.GLOBAL
@@ -45,6 +40,22 @@ class _TrackerState extends State<Tracker> {
             ),
           ),
           Container(
+            margin: const EdgeInsets.only(
+              left: 20.0,
+              right: 20.0,
+              top: 20.0,
+              bottom: 20.0,
+            ),
+            padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Colors.black87,
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(50),
+                bottomLeft: Radius.circular(50),
+                topRight: Radius.circular(50),
+                topLeft: Radius.circular(50),
+              ),
+            ),
             height: size.height * 0.1,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

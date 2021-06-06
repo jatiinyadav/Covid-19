@@ -1,6 +1,8 @@
 // import 'package:covid19_app_flutter/Preventions/preventions.dart';
 // import 'package:covid19_app_flutter/QNA/qna.dart';
 import 'package:covid19_app_flutter/screens/tracker.dart';
+// import 'package:covid19_app_flutter/screens/image_rotate.dart';
+// import 'package:covid19_app_flutter/screens/tracker.dart';
 // import 'package:covid19_app_flutter/Services/auth.dart';
 // import 'package:covid19_app_flutter/app/sign_in/landing_page.dart';
 import 'package:firebase_core/firebase_core.dart';
