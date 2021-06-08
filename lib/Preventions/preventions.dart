@@ -1,4 +1,5 @@
 import 'package:align_positioned/align_positioned.dart';
+import 'package:covid19_app_flutter/QNA/qna.dart';
 import 'package:covid19_app_flutter/Symptoms/symptoms.dart';
 // import 'package:covid19_app_flutter/Preventions/symptoms.dart';
 import 'package:covid19_app_flutter/constant.dart';
@@ -45,7 +46,7 @@ class PreventionScreen extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return SymptomsScreen();
+                                return QuesAnsScreen();
                               },
                             ),
                           );

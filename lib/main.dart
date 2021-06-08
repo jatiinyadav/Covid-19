@@ -6,6 +6,7 @@
 // import 'package:covid19_app_flutter/app/sign_in/landing_page.dart';
 // import 'package:covid19_app_flutter/screens/tracker.dart';
 import 'package:covid19_app_flutter/AppHomeScreen/apphome.dart';
+import 'package:covid19_app_flutter/screens/bottom_bar.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/rendering.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       //   auth: Auth(),
       // ),
       // home: Tracker(),
-      home: AppHomeScreen(),
+      home: BottomBar(),
     );
   }
 }

@@ -1,6 +1,7 @@
 // import 'package:align_positioned/align_positioned.dart';
 // import 'package:covid19_app_flutter/Preventions/preventions.dart';
 // import 'package:covid19_app_flutter/app/home_page.dart';
+import 'package:covid19_app_flutter/AppHomeScreen/apphome.dart';
 import 'package:covid19_app_flutter/constant.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
@@ -21,7 +22,23 @@ class QuesAnsScreen extends StatelessWidget {
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 70,
+                    height: 60.0,
+                  ),
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return AppHomeScreen();
+                            },
+                          ),
+                        );
+                      },
+                      child: Image.asset("assets/icons/forward-black-48.png"),
+                    ),
                   ),
                   Image.asset("assets/images/Corona_Banner_qna.png"),
                   Text(
