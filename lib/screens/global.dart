@@ -2,7 +2,7 @@ import 'package:covid19_app_flutter/Services/covid_service.dart';
 import 'package:covid19_app_flutter/models/global_summary.dart';
 import 'package:covid19_app_flutter/screens/global_loading.dart';
 import 'package:covid19_app_flutter/screens/global_statistics.dart';
-import 'package:covid19_app_flutter/screens/image_rotate.dart';
+// import 'package:covid19_app_flutter/screens/image_rotate.dart';
 import 'package:flutter/material.dart';
 
 CovidService covidService = CovidService();
@@ -29,6 +29,7 @@ class _GlobalState extends State<Global> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         // ImageRotate(),
+
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 14, vertical: 16),
           child: Row(

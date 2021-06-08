@@ -23,58 +23,54 @@ class _TrackerState extends State<Tracker> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
-        // crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // ImageRotate(),
           Expanded(
             child: Container(
-              color: Colors.amber[500],
+              color: Colors.blueGrey.shade100,
               padding: EdgeInsets.fromLTRB(32, 32, 32, 32),
               child: AnimatedSwitcher(
                 duration: Duration(milliseconds: 250),
-                child: navigationStatus == NavigationStatus.GLOBAL
-                    ? Global()
-                    : Country(),
+                child: navigationStatus == NavigationStatus.COUNTRY
+                    ? Country()
+                    : Global(),
               ),
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(
-              left: 20.0,
-              right: 20.0,
-              top: 20.0,
-              bottom: 20.0,
-            ),
-            padding: EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              color: Colors.black87,
-              borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(50),
-                bottomLeft: Radius.circular(50),
-                topRight: Radius.circular(50),
-                topLeft: Radius.circular(50),
-              ),
-            ),
+            // padding: EdgeInsets.all(20),
+            // decoration: BoxDecoration(
+            //   color: Colors.black87,
+            //   borderRadius: BorderRadius.only(
+            //     bottomRight: Radius.circular(50),
+            //     bottomLeft: Radius.circular(50),
+            //     topRight: Radius.circular(50),
+            //     topLeft: Radius.circular(50),
+            //   ),
+            // ),
+            color: Colors.blue.shade100,
             height: size.height * 0.1,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                NavigationOption(
-                  title: "Global",
-                  selected: navigationStatus == NavigationStatus.GLOBAL,
-                  onSelected: () {
-                    setState(() {
-                      navigationStatus = NavigationStatus.GLOBAL;
-                    });
-                  },
-                ),
                 NavigationOption(
                   title: "Country",
                   selected: navigationStatus == NavigationStatus.COUNTRY,
                   onSelected: () {
                     setState(() {
                       navigationStatus = NavigationStatus.COUNTRY;
+                    });
+                  },
+                ),
+                NavigationOption(
+                  title: "Global",
+                  selected: navigationStatus == NavigationStatus.GLOBAL,
+                  onSelected: () {
+                    setState(() {
+                      navigationStatus = NavigationStatus.GLOBAL;
                     });
                   },
                 ),
