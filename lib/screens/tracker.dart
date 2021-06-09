@@ -35,22 +35,12 @@ class _TrackerState extends State<Tracker> {
               child: AnimatedSwitcher(
                 duration: Duration(milliseconds: 250),
                 child: navigationStatus == NavigationStatus.COUNTRY
-                    ? Country()
-                    : Global(),
+                    ? Global()
+                    : Country(),
               ),
             ),
           ),
           Container(
-            // padding: EdgeInsets.all(20),
-            // decoration: BoxDecoration(
-            //   color: Colors.black87,
-            //   borderRadius: BorderRadius.only(
-            //     bottomRight: Radius.circular(50),
-            //     bottomLeft: Radius.circular(50),
-            //     topRight: Radius.circular(50),
-            //     topLeft: Radius.circular(50),
-            //   ),
-            // ),
             color: Colors.blue.shade100,
             height: size.height * 0.1,
             child: Row(
@@ -58,15 +48,6 @@ class _TrackerState extends State<Tracker> {
               children: [
                 NavigationOption(
                   title: "Country",
-                  selected: navigationStatus == NavigationStatus.COUNTRY,
-                  onSelected: () {
-                    setState(() {
-                      navigationStatus = NavigationStatus.COUNTRY;
-                    });
-                  },
-                ),
-                NavigationOption(
-                  title: "Global",
                   selected: navigationStatus == NavigationStatus.GLOBAL,
                   onSelected: () {
                     setState(() {
@@ -74,9 +55,19 @@ class _TrackerState extends State<Tracker> {
                     });
                   },
                 ),
+                NavigationOption(
+                  title: "Global",
+                  selected: navigationStatus == NavigationStatus.COUNTRY,
+                  onSelected: () {
+                    setState(() {
+                      navigationStatus = NavigationStatus.COUNTRY;
+                    });
+                  },
+                ),
               ],
             ),
           ),
+          SizedBox(height: 50.0),
         ],
       ),
     );

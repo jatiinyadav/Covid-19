@@ -1,9 +1,6 @@
 import 'package:align_positioned/align_positioned.dart';
+import 'package:covid19_app_flutter/MainHome/trackernew.dart';
 import 'package:covid19_app_flutter/Preventions/preventions.dart';
-import 'package:covid19_app_flutter/QNA/qna.dart';
-import 'package:covid19_app_flutter/screens/bottom_bar.dart';
-import 'package:covid19_app_flutter/screens/ontapscreens.dart';
-import 'package:covid19_app_flutter/screens/prevent_card_new.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../constant.dart';
@@ -13,65 +10,63 @@ class AppHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color.fromRGBO(165, 100, 200, 1),
-            Color.fromRGBO(180, 148, 222, 1),
-          ],
-        ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            child: BottomBar(),
-          ),
-          // Image.asset("assets/images/coronavirus_icon.png"),
-          // // ImageRotate(),
-          // SizedBox(
-          //   height: 20.0,
-          // ),
-          // Image.asset("assets/images/corona-new-banner.png"),
-          // SizedBox(
-          //   height: 10.0,
-          // ),
-          // OnTapScreens(
-          //   text: "Corona Virus FAQ's   ",
-          //   returnScreen: QuesAnsScreen(),
-          // ),
-          // OnTapScreens(
-          //   text: "Want Detailed Statistics?   ",
-          // ),
-          // SizedBox(height: 40),
-          // Container(
-          //   padding: EdgeInsets.only(
-          //     left: 20.0,
-          //     right: 20.0,
-          //     top: 20.0,
-          //   ),
-          //   child: PreventCard(
-          //     image: "assets/images/doctor_health_128.png",
-          //     title: "  In case of any emergency",
-          //     text: "      011-23978046",
-          //   ),
-          // ),
-          // Container(
-          //   padding: EdgeInsets.all(20.0),
-          //   child: PreventCardNew(
-          //     image: "assets/images/doctor_prevention_128.png",
-          //     title: "5 must have",
-          //     text: "Preventions from Covid 19",
-          //   ),
-          // ),
-          // MyName(),
-          // MySocial(),
-          // BottomBar(),
-        ],
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: TrackerNew(),
+        // child: Column(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   crossAxisAlignment: CrossAxisAlignment.center,
+        //   children: [
+        //     Image.asset("assets/images/coronavirus_icon.png"),
+        //     // ImageRotate(),
+        //     SizedBox(
+        //       height: 20.0,
+        //     ),
+        //     Image.asset("assets/images/corona-new-banner.png"),
+        //     SizedBox(
+        //       height: 10.0,
+        //     ),
+        //     OnTapScreens(
+        //       text: "Corona Virus FAQ's   ",
+        //       image: "assets/icons/forward-button-20.png",
+        //       returnScreen: QuesAnsScreen(),
+        //     ),
+        //     OnTapScreens(
+        //       text: "Detailed Statistics at Cases button in bottom",
+        //       image: "assets/icons/downward-button-20.png",
+        //       // returnScreen: () {},
+        //     ),
+        //     SizedBox(height: 40),
+        //     Container(
+        //       padding: EdgeInsets.only(
+        //         left: 20.0,
+        //         right: 20.0,
+        //         top: 20.0,
+        //       ),
+        //       child: PreventCard(
+        //         image: "assets/images/doctor_health_128.png",
+        //         title: "  In case of any emergency",
+        //         text: "      011-23978046",
+        //       ),
+        //     ),
+        //     Container(
+        //       padding: EdgeInsets.all(20.0),
+        //       child: PreventCardNew(
+        //         image: "assets/images/doctor_prevention_128.png",
+        //         title: "5 must have",
+        //         text: "Preventions from Covid 19",
+        //       ),
+        //     ),
+        //     MyName(),
+        //     MySocial(),
+        //   ],
+        // ),
       ),
     );
+  }
+
+  buildDataSuggestion(AsyncSnapshot<Object?> snapshot) {
+    return snapshot.data;
   }
 }
 
@@ -253,82 +248,5 @@ class MySocial extends StatelessWidget {
   openurl3() {
     String url3 = "https://github.com/jatiinyadav";
     launch(url3);
-  }
-}
-
-class PreventCard extends StatelessWidget {
-  final String image;
-  final String title;
-  final String text;
-  const PreventCard({
-    Key? key,
-    required this.image,
-    required this.title,
-    required this.text,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10.0),
-      child: SizedBox(
-        height: 80,
-        child: Stack(
-          // alignment: Alignment.centerLeft,
-          children: [
-            Container(
-              height: 80,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.white54,
-                boxShadow: [
-                  BoxShadow(
-                      offset: Offset(0, 2),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      color: kShadowColor),
-                ],
-              ),
-            ),
-            Image.asset(image),
-            Positioned(
-              left: 80,
-              child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 15,
-                ),
-                height: 80,
-                width: MediaQuery.of(context).size.width - 170,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 13,
-                          color: Colors.red.shade600,
-                          decoration: TextDecoration.none),
-                    ),
-                    Text(
-                      text,
-                      style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.none),
-                    ),
-                  ],
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
-    );
   }
 }

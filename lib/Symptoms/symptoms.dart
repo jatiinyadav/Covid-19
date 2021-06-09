@@ -1,6 +1,4 @@
 import 'package:align_positioned/align_positioned.dart';
-import 'package:covid19_app_flutter/Preventions/preventions.dart';
-// import 'package:covid19_app_flutter/app/home_page.dart';
 import 'package:covid19_app_flutter/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -37,24 +35,24 @@ class SymptomsScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return PreventionScreen();
-                              },
-                            ),
-                          );
-                        },
-                        child: Image.asset("assets/icons/forward-button.png"),
-                      ),
-                      // child: SvgPicture.asset(
-                      //     "assets/icons/forward_user_interface_36.svg")),
-                    ),
+                    // Align(
+                    //   alignment: Alignment.topRight,
+                    //   child: GestureDetector(
+                    //     onTap: () {
+                    //       Navigator.push(
+                    //         context,
+                    //         MaterialPageRoute(
+                    //           builder: (context) {
+                    //             return PreventionScreen();
+                    //           },
+                    //         ),
+                    //       );
+                    //     },
+                    //     child: Image.asset("assets/icons/forward-button.png"),
+                    //   ),
+                    //   // child: SvgPicture.asset(
+                    //   //     "assets/icons/forward_user_interface_36.svg")),
+                    // ),
                     SizedBox(height: 20),
                     Expanded(
                       child: Stack(
@@ -72,7 +70,7 @@ class SymptomsScreen extends StatelessWidget {
                             dy: -120,
                           ),
                           Positioned(
-                            top: 40,
+                            top: 60,
                             left: 170,
                             child: Text(
                               "Consult a Doctor, \nif needed.",
@@ -165,7 +163,7 @@ class SymptomsScreen extends StatelessWidget {
                         "Proper diet can help in the treatment of symptoms of respiratory diseases too.",
                     title: "Breathing Problem",
                   ),
-                  SizedBox(height: 40),
+                  SizedBox(height: 30),
                   Text(
                     "Crafted with ❤️ by Jatin Yadav",
                     textAlign: TextAlign.center,
@@ -174,7 +172,7 @@ class SymptomsScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 40),
+                  SizedBox(height: 80),
                 ],
               ),
             )

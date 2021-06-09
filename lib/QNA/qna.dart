@@ -1,10 +1,6 @@
-// import 'package:align_positioned/align_positioned.dart';
-// import 'package:covid19_app_flutter/Preventions/preventions.dart';
-// import 'package:covid19_app_flutter/app/home_page.dart';
 import 'package:covid19_app_flutter/AppHomeScreen/apphome.dart';
 import 'package:covid19_app_flutter/constant.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
 
 class QuesAnsScreen extends StatelessWidget {
   const QuesAnsScreen({Key? key}) : super(key: key);
@@ -32,7 +28,10 @@ class QuesAnsScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return AppHomeScreen();
+                              return QuesAnsScreen();
+                              // return AppHomeScreen(
+                              //   summaryList: [],
+                              // );
                             },
                           ),
                         );
@@ -80,7 +79,7 @@ class QuesAnsScreen extends StatelessWidget {
                     text:
                         "Yes. At-home testing and collection allow you to collect a specimen at home and either send it to a testing facility or preform the test at home.",
                   ),
-                  SizedBox(height: 40),
+                  SizedBox(height: 30),
                   Text(
                     "Crafted with ❤️ by Jatin Yadav",
                     textAlign: TextAlign.center,
@@ -89,7 +88,7 @@ class QuesAnsScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 40),
+                  SizedBox(height: 80),
                 ],
               ),
             )

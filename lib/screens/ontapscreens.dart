@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 class OnTapScreens extends StatelessWidget {
   final returnScreen;
   final String text;
+  final String image;
 
-  const OnTapScreens({Key? key, this.returnScreen, required this.text})
+  const OnTapScreens(
+      {Key? key, this.returnScreen, required this.text, required this.image})
       : super(key: key);
 
   @override
@@ -54,7 +56,7 @@ class OnTapScreens extends StatelessWidget {
                         ),
                       );
                     },
-                    child: Image.asset("assets/icons/forward-button-20.png"),
+                    child: Image.asset(image),
                   ),
                 ),
               ],

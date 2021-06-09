@@ -1,7 +1,6 @@
 import 'package:align_positioned/align_positioned.dart';
+import 'package:covid19_app_flutter/AppHomeScreen/apphome.dart';
 import 'package:covid19_app_flutter/QNA/qna.dart';
-import 'package:covid19_app_flutter/Symptoms/symptoms.dart';
-// import 'package:covid19_app_flutter/Preventions/symptoms.dart';
 import 'package:covid19_app_flutter/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -46,7 +45,10 @@ class PreventionScreen extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return QuesAnsScreen();
+                                return AppHomeScreen();
+                                // return AppHomeScreen(
+                                //   summary: ,
+                                // );
                               },
                             ),
                           );
@@ -166,7 +168,7 @@ class PreventionScreen extends StatelessWidget {
                         "People in quarantine should stay home, and monitor their health.",
                     title: "Home Quarantine",
                   ),
-                  SizedBox(height: 40),
+                  SizedBox(height: 30),
                   Text(
                     "Crafted with ❤️ by Jatin Yadav",
                     textAlign: TextAlign.center,
@@ -175,10 +177,13 @@ class PreventionScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 40),
+                  SizedBox(height: 80),
                 ],
               ),
-            )
+            ),
+            // Container(
+            //   child: BottomBar(),
+            // ),
           ],
         ),
       ),

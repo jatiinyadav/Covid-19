@@ -1,12 +1,8 @@
-// import 'package:covid19_app_flutter/Preventions/preventions.dart';
-// import 'package:covid19_app_flutter/QNA/qna.dart';
-// import 'package:covid19_app_flutter/screens/image_rotate.dart';
-// import 'package:covid19_app_flutter/screens/tracker.dart';
-// import 'package:covid19_app_flutter/Services/auth.dart';
-// import 'package:covid19_app_flutter/app/sign_in/landing_page.dart';
-// import 'package:covid19_app_flutter/screens/tracker.dart';
 import 'package:covid19_app_flutter/AppHomeScreen/apphome.dart';
-import 'package:covid19_app_flutter/screens/bottom_bar.dart';
+import 'package:covid19_app_flutter/screens/new-bottombar.dart';
+// import 'package:covid19_app_flutter/MainHome/trackernew.dart';
+// import 'package:covid19_app_flutter/screens/new-bottombar.dart';
+// import 'package:covid19_app_flutter/screens/tracker.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/rendering.dart';
@@ -32,8 +28,7 @@ class MyApp extends StatelessWidget {
       // home: LandingPage(
       //   auth: Auth(),
       // ),
-      // home: Tracker(),
-      home: BottomBar(),
+      home: HomeBottomBar(),
     );
   }
 }
