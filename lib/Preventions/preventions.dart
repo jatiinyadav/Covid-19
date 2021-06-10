@@ -1,6 +1,5 @@
 import 'package:align_positioned/align_positioned.dart';
 import 'package:covid19_app_flutter/AppHomeScreen/apphome.dart';
-import 'package:covid19_app_flutter/QNA/qna.dart';
 import 'package:covid19_app_flutter/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

@@ -3,7 +3,6 @@ import 'package:covid19_app_flutter/MainHome/trackernew.dart';
 import 'package:covid19_app_flutter/Preventions/preventions.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../constant.dart';
 
 class AppHomeScreen extends StatelessWidget {
   const AppHomeScreen({Key? key}) : super(key: key);

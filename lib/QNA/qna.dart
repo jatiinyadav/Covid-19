@@ -28,7 +28,7 @@ class QuesAnsScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return QuesAnsScreen();
+                              return AppHomeScreen();
                               // return AppHomeScreen(
                               //   summaryList: [],
                               // );

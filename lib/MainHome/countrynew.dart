@@ -33,14 +33,24 @@ class _CountrNewState extends State<CountrNew> {
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           return Center(
-            child: Text("Error"),
+            child: Text(
+              "Network Error",
+              style: TextStyle(
+                color: Colors.amberAccent,
+              ),
+            ),
           );
         }
         switch (snapshot.connectionState) {
           default:
             return !snapshot.hasData
                 ? Center(
-                    child: Text("Empty"),
+                    child: Text(
+                      "Network Error",
+                      style: TextStyle(
+                        color: Colors.red,
+                      ),
+                    ),
                   )
                 : Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -55,14 +65,14 @@ class _CountrNewState extends State<CountrNew> {
                         builder: (context, snapshot) {
                           if (snapshot.hasError) {
                             return Center(
-                              child: Text("Error"),
+                              child: Text("Network Error"),
                             );
                           }
                           switch (snapshot.connectionState) {
                             default:
                               return !snapshot.hasData
                                   ? Center(
-                                      child: Text("Empty"),
+                                      child: Text("Network Error"),
                                     )
                                   : CountryStatisticNew(
                                       summaryList:

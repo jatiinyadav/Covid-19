@@ -1,9 +1,4 @@
-// import 'package:covid19_app_flutter/AppHomeScreen/apphome.dart';
-// import 'package:covid19_app_flutter/QNA/qna.dart';
-// import 'package:covid19_app_flutter/screens/ontapscreens.dart';
-// import 'package:covid19_app_flutter/screens/prevent_card_new.dart';
 import 'package:covid19_app_flutter/AppHomeScreen/apphome.dart';
-import 'package:covid19_app_flutter/Preventions/preventions.dart';
 import 'package:covid19_app_flutter/QNA/qna.dart';
 import 'package:covid19_app_flutter/screens/image_rotate.dart';
 import 'package:covid19_app_flutter/screens/ontapscreens.dart';

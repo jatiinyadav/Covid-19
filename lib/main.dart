@@ -1,4 +1,5 @@
-import 'package:covid19_app_flutter/AppHomeScreen/apphome.dart';
+import 'package:covid19_app_flutter/Services/auth.dart';
+import 'package:covid19_app_flutter/app/sign_in/landing_page.dart';
 import 'package:covid19_app_flutter/screens/new-bottombar.dart';
 // import 'package:covid19_app_flutter/MainHome/trackernew.dart';
 // import 'package:covid19_app_flutter/screens/new-bottombar.dart';
@@ -25,10 +26,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      // home: LandingPage(
-      //   auth: Auth(),
-      // ),
-      home: HomeBottomBar(),
+      home: LandingPage(
+        auth: Auth(),
+      ),
+      // home: HomeBottomBar(),
     );
   }
 }

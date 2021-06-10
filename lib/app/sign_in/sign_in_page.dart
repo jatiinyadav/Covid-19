@@ -80,10 +80,10 @@ class SignInPage extends StatelessWidget {
   Widget _buildContent(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [
-          Color.fromRGBO(145, 100, 222, 1),
-          Color.fromRGBO(160, 148, 170, 1),
-        ]),
+        image: DecorationImage(
+          image: AssetImage("images/signin-background.png"),
+          fit: BoxFit.cover,
+        ),
       ),
       padding: EdgeInsets.all(20.0),
       child: Column(
@@ -173,7 +173,7 @@ class _AnimatedImageState extends State<AnimatedImage>
   Widget build(BuildContext context) {
     return SlideTransition(
       position: _animation,
-      child: Image.asset('images/doctors_sigin_new.png'),
+      child: Image.asset('images/signin-doctor-final.png'),
     );
   }
 }

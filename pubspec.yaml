@@ -58,17 +58,7 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - images/facebook-logo.png
-    - images/google-logo.png
-    - images/email-32.png
-    - images/anonymous-mask.png
-    - images/mail-logo-2.png
-    - images/signin-doctor.png
-    - images/mask-4.png
-    - images/signin-doctor-final.png
-    - images/google-24.png
-    - images/facebook-24.png
-    - images/doctors_sigin_new.png
+    - images/
     - assets/icons/
     - assets/images/
 
