@@ -11,7 +11,7 @@
 - REST API
 
 ### Download APK
-<pre><a href="https://github.com/jatiinyadav/Covid-19">https://github.com/jatiinyadav/Covid-19</a></pre>
+<pre><a href="https://github.com/jatiinyadav/Covid-19/blob/master/app-release.apk">https://github.com/jatiinyadav/Covid-19/blob/master/app-release.apk</a></pre>
 
 ### For more information about this app:
 ```bash
