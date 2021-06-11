@@ -9,6 +9,12 @@
 ### Download APK
 <pre><a href="https://github.com/jatiinyadav/Covid-19">https://github.com/jatiinyadav/Covid-19</a></pre>
 
+### API
+```bash
+REST API
+```
+
+
 ### Clone this repository
 ```bash
 git clone https://github.com/jatiinyadav/Covid-19.git
