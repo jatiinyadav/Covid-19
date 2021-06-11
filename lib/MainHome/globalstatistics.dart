@@ -1,4 +1,3 @@
-// import 'package:covid19_app_flutter/models/global_summary.dart';
 import 'package:covid19_app_flutter/models/global_summary.dart';
 import 'package:flutter/material.dart';
 import 'package:timeago/timeago.dart' as timeago;
@@ -7,10 +6,6 @@ class GlobalStatisticNew extends StatelessWidget {
   final GlobalSummaryModel summary;
 
   const GlobalStatisticNew({Key? key, required this.summary}) : super(key: key);
-
-  // String Function(Match match) get mathFunc => mathFunc;
-
-  // Pattern get reg => reg;
 
   @override
   Widget build(BuildContext context) {

@@ -18,26 +18,12 @@ class SignInPage extends StatelessWidget {
         msg: "Signed in as Guest Mode",
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
+        timeInSecForIosWeb: 3,
       );
     } catch (e) {
       print(toString());
     }
   }
-
-  // Future<LoginScreen?> signInWithPhone() async {
-  //   try {
-  //     await auth!.signInWithPhone();
-  //     Fluttertoast.showToast(
-  //       msg: "Signed in as Using Phone Number",
-  //       toastLength: Toast.LENGTH_SHORT,
-  //       gravity: ToastGravity.CENTER,
-  //       timeInSecForIosWeb: 1,
-  //     );
-  //   } catch (e) {
-  //     print(toString());
-  //   }
-  // }
 
   Future<void> _signInWithGoogle() async {
     try {
@@ -70,9 +56,6 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Covid-19'),
-      // ),
       body: _buildContent(context),
     );
   }
@@ -90,9 +73,15 @@ class SignInPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         // crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // Image.asset('images/mask-4.png'),
-          // Image.asset('images/signin-doctor-logo.png'),
-
+          Text(
+            "Covid-19",
+            style: TextStyle(
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
+                color: Colors.black,
+                decoration: TextDecoration.none),
+          ),
           AnimatedImage(),
           SizedBox(height: 50.0),
           SocialSignInButton(
@@ -115,7 +104,7 @@ class SignInPage extends StatelessWidget {
             assetsName: 'images/anonymous-mask.png',
             text: 'Sign in as Guest',
             textColor: Colors.white,
-            color: Colors.black38,
+            color: Colors.black54,
             onPressed: _signInAnonymously,
             // onPressed: () =>
             //     _signInAnonymously(), // Call back onPressed and  _signInAnonymously() takes no argumentthat why we have used the above shortcut method
@@ -131,7 +120,7 @@ class SignInPage extends StatelessWidget {
           ),
           SizedBox(height: 10.0),
           SocialSignInButton(
-            assetsName: 'images/mail-logo-2.png',
+            assetsName: 'images/phone-24.png',
             text: 'Sign in with Phone Number',
             textColor: Colors.white,
             color: Colors.teal.shade700,
@@ -139,7 +128,17 @@ class SignInPage extends StatelessWidget {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => LoginScreen()));
             },
-          )
+          ),
+          SizedBox(height: 40),
+          Text(
+            "Crafted with ❤️ & ☕ by Jatin Yadav",
+            style: TextStyle(
+              fontSize: 13.0,
+              color: Colors.black87,
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );

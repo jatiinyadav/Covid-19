@@ -40,7 +40,6 @@ class CountryStatisticNew extends StatelessWidget {
     Color rightColor,
   ) {
     return Card(
-      // elevation: 1,
       child: Container(
         height: 70,
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),

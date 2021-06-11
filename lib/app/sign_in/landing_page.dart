@@ -5,7 +5,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatelessWidget {
-  const LandingPage({Key? key, required this.auth}) : super(key: key);
+  const LandingPage({
+    Key? key,
+    required this.auth,
+  }) : super(key: key);
   final AuthBase? auth;
 
   @override

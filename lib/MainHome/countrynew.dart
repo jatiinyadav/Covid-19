@@ -56,10 +56,6 @@ class _CountrNewState extends State<CountrNew> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     // crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Padding(
-                      //   padding:
-                      //       EdgeInsets.symmetric(horizontal: 4, vertical: 6),
-                      // ),
                       FutureBuilder(
                         future: summaryList,
                         builder: (context, snapshot) {

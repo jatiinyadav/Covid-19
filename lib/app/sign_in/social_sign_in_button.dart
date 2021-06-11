@@ -9,25 +9,26 @@ class SocialSignInButton extends CustomElevatedButton {
     required Color textColor,
     required VoidCallback onPressed,
   }) : super(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset(assetsName),
-                Text(
-                  text,
-                  style: TextStyle(
-                    color: textColor,
-                    fontSize: 15.0,
-                  ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image.asset(assetsName),
+              Text(
+                text,
+                style: TextStyle(
+                  color: textColor,
+                  fontSize: 15.0,
                 ),
-                Opacity(
-                  opacity: 0,
-                  child: Image.asset(assetsName),
-                ),
-              ],
-            ),
-            color: color,
-            height: 45.0,
-            onPressed: onPressed,
-            borderRadius: 4.0);
+              ),
+              Opacity(
+                opacity: 0,
+                child: Image.asset(assetsName),
+              ),
+            ],
+          ),
+          color: color,
+          height: 45.0,
+          onPressed: onPressed,
+          borderRadius: 4.0,
+        );
 }

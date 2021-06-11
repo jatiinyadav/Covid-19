@@ -1,4 +1,3 @@
-import 'package:covid19_app_flutter/app/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -20,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
       await _auth.signOut();
       Fluttertoast.showToast(
         msg: "Signed out Successfully.",
-        toastLength: Toast.LENGTH_SHORT,
+        toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.CENTER,
         timeInSecForIosWeb: 1,
       );
@@ -58,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       if (authCredential.user != null) {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomePage()));
+            context, MaterialPageRoute(builder: (context) => BottomAppBar()));
       }
     } on FirebaseAuthException catch (e) {
       setState(() {
@@ -90,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
             decoration: InputDecoration(
               fillColor: Colors.white38,
               filled: true,
-              hintText: "Enter your Phone Number",
+              hintText: "Enter your Phone Number with +91",
             ),
           ),
           SizedBox(height: 16.0),

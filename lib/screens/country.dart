@@ -130,7 +130,6 @@ class _CountryState extends State<Country> {
                             () {
                               summaryList = covidService.getCountrySummary(
                                   buildDataSuggestion(snapshot)
-                                      .data
                                       .firstWhere((element) =>
                                           element.country == suggestion)
                                       .slug);

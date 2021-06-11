@@ -25,7 +25,9 @@ class GlobalSummaryModel {
       json["Global"]["TotalDeaths"],
       json["Global"]["NewRecovered"],
       json["Global"]["TotalRecovered"],
-      DateTime.parse(json["Date"]),
+      DateTime.parse(
+        json["Date"],
+      ),
     );
   }
 }

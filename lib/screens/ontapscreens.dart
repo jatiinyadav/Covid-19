@@ -1,4 +1,4 @@
-import 'package:covid19_app_flutter/QNA/qna.dart';
+import 'package:covid19_app_flutter/AppHomeScreen/apphome.dart';
 import 'package:flutter/material.dart';
 
 class OnTapScreens extends StatelessWidget {
@@ -27,7 +27,7 @@ class OnTapScreens extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return QuesAnsScreen();
+                            return AppHomeScreen();
                           },
                         ),
                       );

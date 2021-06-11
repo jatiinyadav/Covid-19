@@ -35,24 +35,6 @@ class SymptomsScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Align(
-                    //   alignment: Alignment.topRight,
-                    //   child: GestureDetector(
-                    //     onTap: () {
-                    //       Navigator.push(
-                    //         context,
-                    //         MaterialPageRoute(
-                    //           builder: (context) {
-                    //             return PreventionScreen();
-                    //           },
-                    //         ),
-                    //       );
-                    //     },
-                    //     child: Image.asset("assets/icons/forward-button.png"),
-                    //   ),
-                    //   // child: SvgPicture.asset(
-                    //   //     "assets/icons/forward_user_interface_36.svg")),
-                    // ),
                     SizedBox(height: 20),
                     Expanded(
                       child: Stack(

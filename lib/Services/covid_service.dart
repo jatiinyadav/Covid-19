@@ -1,6 +1,5 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
 import '../models/global_summary.dart';
 import '../models/country_summary.dart';
 import '../models/country.dart';

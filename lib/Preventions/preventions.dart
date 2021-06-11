@@ -98,31 +98,7 @@ class PreventionScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Text(
-                  //   "Symptoms",
-                  //   style: kTitleTextstyle,
-                  // ),
-                  // SizedBox(height: 20),
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  //   children: [
-                  //     SymptomCard(
-                  //       image: "assets/images/headache.png",
-                  //       title: 'Headache',
-                  //     ),
-                  //     SymptomCard(
-                  //       image: "assets/images/caugh.png",
-                  //       title: 'Caugh',
-                  //     ),
-                  //     SymptomCard(
-                  //       image: "assets/images/fever.png",
-                  //       title: 'Headache',
-                  //     ),
-                  //   ],
-                  // ),
-                  // SizedBox(height: 20),
                   Text(
                     "Prevention",
                     style: TextStyle(
@@ -180,9 +156,6 @@ class PreventionScreen extends StatelessWidget {
                 ],
               ),
             ),
-            // Container(
-            //   child: BottomBar(),
-            // ),
           ],
         ),
       ),

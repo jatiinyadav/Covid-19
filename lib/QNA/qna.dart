@@ -15,7 +15,6 @@ class QuesAnsScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
                     height: 60.0,
@@ -29,9 +28,6 @@ class QuesAnsScreen extends StatelessWidget {
                           MaterialPageRoute(
                             builder: (context) {
                               return AppHomeScreen();
-                              // return AppHomeScreen(
-                              //   summaryList: [],
-                              // );
                             },
                           ),
                         );

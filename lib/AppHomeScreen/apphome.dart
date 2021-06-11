@@ -12,54 +12,6 @@ class AppHomeScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: TrackerNew(),
-        // child: Column(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        //   crossAxisAlignment: CrossAxisAlignment.center,
-        //   children: [
-        //     Image.asset("assets/images/coronavirus_icon.png"),
-        //     // ImageRotate(),
-        //     SizedBox(
-        //       height: 20.0,
-        //     ),
-        //     Image.asset("assets/images/corona-new-banner.png"),
-        //     SizedBox(
-        //       height: 10.0,
-        //     ),
-        //     OnTapScreens(
-        //       text: "Corona Virus FAQ's   ",
-        //       image: "assets/icons/forward-button-20.png",
-        //       returnScreen: QuesAnsScreen(),
-        //     ),
-        //     OnTapScreens(
-        //       text: "Detailed Statistics at Cases button in bottom",
-        //       image: "assets/icons/downward-button-20.png",
-        //       // returnScreen: () {},
-        //     ),
-        //     SizedBox(height: 40),
-        //     Container(
-        //       padding: EdgeInsets.only(
-        //         left: 20.0,
-        //         right: 20.0,
-        //         top: 20.0,
-        //       ),
-        //       child: PreventCard(
-        //         image: "assets/images/doctor_health_128.png",
-        //         title: "  In case of any emergency",
-        //         text: "      011-23978046",
-        //       ),
-        //     ),
-        //     Container(
-        //       padding: EdgeInsets.all(20.0),
-        //       child: PreventCardNew(
-        //         image: "assets/images/doctor_prevention_128.png",
-        //         title: "5 must have",
-        //         text: "Preventions from Covid 19",
-        //       ),
-        //     ),
-        //     MyName(),
-        //     MySocial(),
-        //   ],
-        // ),
       ),
     );
   }
@@ -172,7 +124,7 @@ class MyName extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Crafted with ❤️ by Jatin Yadav",
+            "Crafted with ❤️ & ☕ by Jatin Yadav",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Poppins',

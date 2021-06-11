@@ -14,7 +14,7 @@ body {
 }
 
 a {
-  color: green;
+  color: #DB4437;
   text-decoration: none;
 }
 
@@ -43,7 +43,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: green;
+  background: #DB4437;
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -111,7 +111,7 @@ h6 {
 
 #header .logo h1 a,
 #header .logo h1 a:hover {
-  color: green;
+  color: #DB4437;
   text-decoration: none;
 }
 
@@ -147,7 +147,7 @@ h6 {
   font-size: 48px;
   font-weight: 500;
   line-height: 56px;
-  color: green;
+  color: #DB4437;
   font-family: "Poppins", sans-serif;
 }
 
@@ -171,7 +171,7 @@ h6 {
 }
 
 #hero .download-btn:hover {
-  background: green;
+  background: #DB4437;
 }
 
 #hero .download-btn i {
@@ -242,7 +242,7 @@ section {
   font-weight: 400;
   margin-bottom: 20px;
   padding-bottom: 0;
-  color: green;
+  color: #DB4437;
   font-family: "Poppins", sans-serif;
 }
 
@@ -270,7 +270,7 @@ section {
 .features .content .icon-box i {
   font-size: 48px;
   float: left;
-  color: green;
+  /* color: #DB4437; */
 }
 
 .features .content .icon-box p {
@@ -315,11 +315,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid green;
+  border: 1px solid grey;
 }
 
 .gallery .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: green;
+  background-color: grey;
 }
 
 .gallery .swiper-slide-active {
@@ -331,7 +331,7 @@ section {
     padding: 40px 0;
   }
   .gallery .swiper-slide-active {
-    border: 6px solid green;
+    border: 6px solid grey;
     padding: 4px;
     background: #fff;
     z-index: 1;

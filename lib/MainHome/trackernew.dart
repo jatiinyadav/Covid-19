@@ -3,6 +3,7 @@ import 'package:covid19_app_flutter/QNA/qna.dart';
 import 'package:covid19_app_flutter/screens/image_rotate.dart';
 import 'package:covid19_app_flutter/screens/ontapscreens.dart';
 import 'package:covid19_app_flutter/screens/prevent_card_new.dart';
+import 'package:covid19_app_flutter/screens/settings.dart';
 import 'package:flutter/material.dart';
 import '../constant.dart';
 import 'countrynew.dart';
@@ -38,10 +39,51 @@ class _TrackerNewState extends State<TrackerNew> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SizedBox(
-            height: 65.0,
+            height: 55.0,
           ),
           // Image.asset("assets/images/coronavirus_icon.png"),
+          // Icon(Icons.settings),
+          Row(
+            children: [
+              SizedBox(width: 30.0),
+              Align(
+                alignment: Alignment.topLeft,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return QuesAnsScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Image.asset("assets/icons/question-25.png"),
+                ),
+              ),
+              SizedBox(width: 290.0),
+              Align(
+                alignment: Alignment.topRight,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return Settings();
+                        },
+                      ),
+                    );
+                  },
+                  child: Image.asset("assets/icons/settings-25.png"),
+                ),
+              ),
+            ],
+          ),
+
           ImageRotate(),
+          // Image.asset("assets/icons/downward-button-20.png"),
           SizedBox(height: 10.0),
           Image.asset("assets/images/corona-new-banner.png"),
           SizedBox(height: 10.0),
@@ -74,14 +116,12 @@ class _TrackerNewState extends State<TrackerNew> {
           OnTapScreens(
             text: "Detailed Statistics at Cases button in bottom",
             image: "assets/icons/downward-button-20.png",
-            // returnScreen: () {},
           ),
           SizedBox(height: 10),
           Container(
             padding: EdgeInsets.only(
               left: 20.0,
               right: 20.0,
-              // top: 20.0,
             ),
             child: PreventCard(
               image: "assets/images/doctor_health_128.png",
@@ -93,7 +133,7 @@ class _TrackerNewState extends State<TrackerNew> {
             padding: EdgeInsets.only(
               left: 20,
               right: 20,
-              top: 20,
+              top: 10,
             ),
             child: PreventCardNew(
               image: "assets/images/doctor_prevention_128.png",
@@ -101,29 +141,10 @@ class _TrackerNewState extends State<TrackerNew> {
               text: "Preventions from Covid 19",
             ),
           ),
-          // ImageRotate(),
-
           SizedBox(height: 20),
           MyName(),
           MySocial(),
           SizedBox(height: 50),
-          // Container(
-          //   height: size.height * 0.1,
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //     children: [
-          //       // NavigationOption(
-          //       //   title: "Country",
-          //       //   selected: navigationStatus == NavigationStatus.GLOBALNEW,
-          //       //   onSelected: () {
-          //       //     setState(() {
-          //       //       navigationStatus = NavigationStatus.GLOBALNEW;
-          //       //     });
-          //       //   },
-          //       // ),
-          //     ],
-          //   ),
-          // ),
         ],
       ),
     );

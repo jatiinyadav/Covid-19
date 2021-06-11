@@ -10,7 +10,6 @@ abstract class AuthBase {
   Future<User> signInAnonymously();
   Future<User> signInWithGoogle();
   Future<User> signInWithFacebook();
-  // Future<LoginScreen> signInWithPhone();
   Future<void> signOut();
 }
 
