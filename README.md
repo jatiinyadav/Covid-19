@@ -6,14 +6,17 @@
   <p align = "center"> My first Flutter Project. This app will provide you necessary details related to Corona Virus (Covid 19). </p>
 </div>
 
+### API
+
+- REST API
+
 ### Download APK
 <pre><a href="https://github.com/jatiinyadav/Covid-19">https://github.com/jatiinyadav/Covid-19</a></pre>
 
-### API
+### For more information about this app:
 ```bash
-REST API
+https://jatiinyadav.github.io/Flutter-App-demo-Covid/
 ```
-
 
 ### Clone this repository
 ```bash
