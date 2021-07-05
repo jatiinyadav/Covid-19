@@ -17,6 +17,11 @@
 ```bash
 https://jatiinyadav.github.io/Flutter-App-demo-Covid/
 ```
+### Installation
+- Run this command in your terminal
+```bash
+flutter pub get
+```
 
 ### Clone this repository
 ```bash
