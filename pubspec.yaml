@@ -37,6 +37,7 @@ dependencies:
   firebase_auth: ^1.2.0
   google_sign_in: ^5.0.4
   flutter_login_facebook: ^1.0.1
+  pixel_perfect: ^1.1.0
 
 dev_dependencies:
   flutter_test:

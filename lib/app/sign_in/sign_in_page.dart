@@ -4,6 +4,7 @@ import 'package:covid19_app_flutter/Services/auth.dart';
 import 'package:covid19_app_flutter/app/sign_in/social_sign_in_button.dart';
 import 'package:covid19_app_flutter/screens/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class SignInPage extends StatelessWidget {
@@ -61,86 +62,97 @@ class SignInPage extends StatelessWidget {
   }
 
   Widget _buildContent(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("images/signin-background.png"),
-          fit: BoxFit.cover,
+    return SingleChildScrollView(
+      child: Container(
+        height: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/signin-background.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              "Covid-19",
+              style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                  color: Colors.black,
+                  decoration: TextDecoration.none),
+            ),
+            AnimatedImage(),
+            SizedBox(height: 50.0),
+            SocialSignInButton(
+              assetsName: 'images/google-24.png',
+              text: 'Sign in with Google',
+              textColor: Colors.white,
+              color: Color.fromRGBO(219, 68, 55, 1),
+              onPressed: _signInWithGoogle,
+            ),
+            SizedBox(height: 10.0),
+            SocialSignInButton(
+              assetsName: 'images/facebook-24.png',
+              text: 'Sign in with Facebook',
+              textColor: Colors.white,
+              color: Color(0xFF334D92),
+              onPressed: _signInWithFacebook,
+            ),
+            SizedBox(height: 10.0),
+            SocialSignInButton(
+              assetsName: 'images/anonymous-mask.png',
+              text: 'Sign in as Guest',
+              textColor: Colors.white,
+              color: Colors.black54,
+              onPressed: _signInAnonymously,
+              // onPressed: () =>
+              //     _signInAnonymously(), // Call back onPressed and  _signInAnonymously() takes no argumentthat why we have used the above shortcut method
+            ),
+            SizedBox(height: 10.0),
+            orText(),
+            SizedBox(height: 10.0),
+            SocialSignInButton(
+              assetsName: 'images/phone-24.png',
+              text: 'Sign in with Phone Number',
+              textColor: Colors.white,
+              color: Colors.teal.shade700,
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()));
+              },
+            ),
+            SizedBox(height: 40),
+            craftedText(),
+          ],
         ),
       ),
-      padding: EdgeInsets.all(20.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            "Covid-19",
-            style: TextStyle(
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
-                color: Colors.black,
-                decoration: TextDecoration.none),
-          ),
-          AnimatedImage(),
-          SizedBox(height: 50.0),
-          SocialSignInButton(
-            assetsName: 'images/google-24.png',
-            text: 'Sign in with Google',
-            textColor: Colors.white,
-            color: Color.fromRGBO(219, 68, 55, 1),
-            onPressed: _signInWithGoogle,
-          ),
-          SizedBox(height: 10.0),
-          SocialSignInButton(
-            assetsName: 'images/facebook-24.png',
-            text: 'Sign in with Facebook',
-            textColor: Colors.white,
-            color: Color(0xFF334D92),
-            onPressed: _signInWithFacebook,
-          ),
-          SizedBox(height: 10.0),
-          SocialSignInButton(
-            assetsName: 'images/anonymous-mask.png',
-            text: 'Sign in as Guest',
-            textColor: Colors.white,
-            color: Colors.black54,
-            onPressed: _signInAnonymously,
-            // onPressed: () =>
-            //     _signInAnonymously(), // Call back onPressed and  _signInAnonymously() takes no argumentthat why we have used the above shortcut method
-          ),
-          SizedBox(height: 10.0),
-          Text(
-            'or',
-            style: TextStyle(
-              fontSize: 18.0,
-              color: Colors.black87,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 10.0),
-          SocialSignInButton(
-            assetsName: 'images/phone-24.png',
-            text: 'Sign in with Phone Number',
-            textColor: Colors.white,
-            color: Colors.teal.shade700,
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()));
-            },
-          ),
-          SizedBox(height: 40),
-          Text(
-            "Crafted with ❤️ & ☕ by Jatin Yadav",
-            style: TextStyle(
-              fontSize: 13.0,
-              color: Colors.black87,
-              fontWeight: FontWeight.bold,
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ],
+    );
+  }
+
+  Text craftedText() {
+    return Text(
+      "Crafted with ❤️ & ☕ by Jatin Yadav",
+      style: TextStyle(
+        fontSize: 13.0,
+        color: Colors.black87,
+        fontWeight: FontWeight.bold,
       ),
+      textAlign: TextAlign.center,
+    );
+  }
+
+  Text orText() {
+    return Text(
+      'or',
+      style: TextStyle(
+        fontSize: 18.0,
+        color: Colors.black87,
+      ),
+      textAlign: TextAlign.center,
     );
   }
 }

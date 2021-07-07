@@ -1,3 +1,4 @@
+import 'package:align_positioned/align_positioned.dart';
 import 'package:covid19_app_flutter/AppHomeScreen/apphome.dart';
 import 'package:covid19_app_flutter/QNA/qna.dart';
 import 'package:covid19_app_flutter/screens/image_rotate.dart';
@@ -26,6 +27,8 @@ class _TrackerNewState extends State<TrackerNew> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 870,
+      width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
@@ -41,45 +44,44 @@ class _TrackerNewState extends State<TrackerNew> {
           SizedBox(
             height: 55.0,
           ),
-          // Image.asset("assets/images/coronavirus_icon.png"),
-          // Icon(Icons.settings),
-          Row(
-            children: [
-              SizedBox(width: 30.0),
-              Align(
-                alignment: Alignment.topLeft,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return QuesAnsScreen();
-                        },
-                      ),
-                    );
-                  },
-                  child: Image.asset("assets/icons/question-25.png"),
+          Container(
+            padding: EdgeInsets.only(left: 20, right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Align(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return QuesAnsScreen();
+                          },
+                        ),
+                      );
+                    },
+                    child: Image.asset("assets/icons/question-25.png"),
+                  ),
                 ),
-              ),
-              SizedBox(width: 290.0),
-              Align(
-                alignment: Alignment.topRight,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return Settings();
-                        },
-                      ),
-                    );
-                  },
-                  child: Image.asset("assets/icons/settings-25.png"),
+                // SizedBox(width: 290.0),
+                Align(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Settings();
+                          },
+                        ),
+                      );
+                    },
+                    child: Image.asset("assets/icons/settings-25.png"),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
 
           ImageRotate(),
@@ -125,8 +127,10 @@ class _TrackerNewState extends State<TrackerNew> {
             ),
             child: PreventCard(
               image: "assets/images/doctor_health_128.png",
-              title: "  In case of any emergency",
-              text: "      011-23978046",
+              title: "In case of any emergency",
+              text: "011-23978046",
+              // title: "5 must have",
+              // text: "Preventions from Covid 19",
             ),
           ),
           Container(
@@ -144,7 +148,6 @@ class _TrackerNewState extends State<TrackerNew> {
           SizedBox(height: 20),
           MyName(),
           MySocial(),
-          SizedBox(height: 50),
         ],
       ),
     );
@@ -186,36 +189,42 @@ class PreventCard extends StatelessWidget {
                 ],
               ),
             ),
-            Image.asset(image),
+            AlignPositioned(
+              child: Image.asset(image),
+              dx: -110,
+            ),
             Positioned(
-              left: 80,
+              left: 100,
               child: Container(
                 padding: EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 15,
+                  horizontal: 8,
+                  vertical: 10,
                 ),
                 height: 80,
                 width: MediaQuery.of(context).size.width - 170,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       title,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 13,
-                          color: Colors.red.shade600,
-                          decoration: TextDecoration.none),
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13.5,
+                        color: Colors.red,
+                        decoration: TextDecoration.none,
+                      ),
                     ),
                     Text(
                       text,
                       style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.none),
+                        fontFamily: 'Poppins',
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        decoration: TextDecoration.none,
+                      ),
                     ),
                   ],
                 ),

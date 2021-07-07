@@ -25,61 +25,63 @@ class _GlobalState extends State<Global> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        // ImageRotate(),
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // ImageRotate(),
 
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 14, vertical: 16),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Global Corona Virus Cases",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 14, vertical: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Global Corona Virus Cases",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
                 ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    summary = covidService.getGlobalSummary();
-                  });
-                },
-                child: Icon(
-                  Icons.refresh,
-                  color: Colors.black,
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      summary = covidService.getGlobalSummary();
+                    });
+                  },
+                  child: Icon(
+                    Icons.refresh,
+                    color: Colors.black,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        SizedBox(height: 30),
-        FutureBuilder(
-          future: summary,
-          builder: (context, snapshot) {
-            if (snapshot.hasError)
-              return Center(
-                child: Text("Error"),
-              );
-            switch (snapshot.connectionState) {
-              case ConnectionState.waiting:
-                return GlobalLoading();
-              default:
-                return !snapshot.hasData
-                    ? Center(
-                        child: Text("Empty"),
-                      )
-                    : GlobalStatistics(
-                        summary: buildData(snapshot),
-                      );
-            }
-          },
-        ),
-      ],
+          SizedBox(height: 30),
+          FutureBuilder(
+            future: summary,
+            builder: (context, snapshot) {
+              if (snapshot.hasError)
+                return Center(
+                  child: Text("Error"),
+                );
+              switch (snapshot.connectionState) {
+                case ConnectionState.waiting:
+                  return GlobalLoading();
+                default:
+                  return !snapshot.hasData
+                      ? Center(
+                          child: Text("Empty"),
+                        )
+                      : GlobalStatistics(
+                          summary: buildData(snapshot),
+                        );
+              }
+            },
+          ),
+        ],
+      ),
     );
   }
 
