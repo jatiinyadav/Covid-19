@@ -22,6 +22,10 @@ https://jatiinyadav.github.io/Flutter-App-demo-Covid/
 ```bash
 flutter pub get
 ```
+- To start the app run this command
+```bash
+flutter run --no-sound-null-safety
+```
 
 ### Clone this repository
 ```bash
