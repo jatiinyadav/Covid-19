@@ -14,9 +14,8 @@
 <pre><a href="https://github.com/jatiinyadav/Covid-19/blob/master/app-release.apk">https://github.com/jatiinyadav/Covid-19/blob/master/app-release.apk</a></pre>
 
 ### For more information about this app:
-```bash
-https://jatiinyadav.github.io/Flutter-App-demo-Covid/
-```
+<pre><center><a href="https://jatiinyadav.github.io/Flutter-App-demo-Covid/" target="_blank" ><b>https://jatiinyadav.github.io/Flutter-App-demo-Covid/</b></a></center></pre>
+
 ### Installation
 - Run this command in your terminal
 ```bash
