@@ -3,7 +3,7 @@
 <div align="center">
   <h2 align = "center">Covid 19 App</h2>
 
-  <p align = "center"> My first Flutter Project. This app will provide you necessary details related to Corona Virus (Covid 19). </p>
+  <p align = "center">This app will provide you necessary details related to Corona Virus (Covid 19). </p>
 </div>
 
 ### API
